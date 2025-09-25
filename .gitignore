@@ -1,0 +1,20 @@
+# Build output
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+
+# IDE files
+.project
+.cproject
+.settings/
+*.launch
+*.svg
+
+# Other
+*.o
+*.su
+*.map
+*.elf
+*.hex
+*.bin
+*.bak
