@@ -225,6 +225,12 @@
     tracePOST_MOVED_TASK_TO_READY_STATE( pxTCB )
 /*-----------------------------------------------------------*/
 
+#define prvReaddTaskToReadyList( pxTCB )										\
+	traceREADDED_TASK_TO_READY_STATE( pxTCB );									\
+	taskRECORD_READY_PRIORITY( ( pxTCB )->uxPriority );							\
+	vListInsertEnd( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+	tracePOST_MOVED_TASK_TO_READY_STATE( pxTCB )
+
 /*
  * Several functions take a TaskHandle_t parameter that can optionally be NULL,
  * where NULL is used to indicate that the handle of the currently executing
